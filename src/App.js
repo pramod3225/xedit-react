@@ -1,15 +1,40 @@
 import React, { Component } from 'react';
+import { DatePicker,Layout } from 'antd'
 import logo from './logo.svg';
 import './App.css';
 
+const {Header, Content, Sider} = Layout;
+
 class App extends Component {
+
+  onChange1 = (date, dateString) => {
+    console.log(date, dateString);
+  }
   render() {
     return (
       <div className="App">
-        <header className="App-header">
+        <Layout>
+          <Header>header</Header>
+          <Layout>
+            <Sider>sider</Sider>
+            <Content>
+              Content
+              <p>djfdjfjd</p>
+              <p>Pramod</p>
+              <p>Manya</p>
+              <div>
+                <DatePicker />
+              </div>
+            </Content>
+          </Layout>
+        </Layout>
+        {/* <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
             Edit <code>src/App.js</code> and save to reload.
+          </p>
+          <p>
+            <DatePicker onChange={this.onChange1}/>
           </p>
           <a
             className="App-link"
@@ -19,7 +44,7 @@ class App extends Component {
           >
             Learn React
           </a>
-        </header>
+        </header> */}
       </div>
     );
   }
